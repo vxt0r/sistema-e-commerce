@@ -8,7 +8,7 @@ Classes
 -Carrinho
 -Pedido
 -Produto
--Lista
+-Lista(Model)
 -Conexao
 
 
