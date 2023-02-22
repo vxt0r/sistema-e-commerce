@@ -1,8 +1,7 @@
 <?php
 
-require 'Pedido.php';
-require 'Produto.php';
-require 'Carrinho.php';
+require 'servicos/Carrinho.php';
+require 'servicos/Pedido.servico.php';
 
 
 session_start();
@@ -13,7 +12,7 @@ foreach($_SESSION['pedido'] as $produto){
     $produtos[] = unserialize($produto);
 }
 
-$forma = (new Carrinho)->formaPagamento($_POST['pagamento']);
+$forma = (new PedidoServico)->formaPagamento($_POST['pagamento']);
 $pedido = new Pedido($produtos,$forma,$_POST['total']);
 session_destroy();
 

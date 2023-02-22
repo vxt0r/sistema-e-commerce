@@ -1,5 +1,7 @@
 <?php
 
+require 'classes/Conexao.php';
+
 class Produto{
     public function __construct(private $nome,private $preco,private $qtd, private $id){}
 

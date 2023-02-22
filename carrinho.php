@@ -1,7 +1,6 @@
 <?php
-require 'lista_produtos.php';
-require 'Produto.php';
-require 'Carrinho.php';
+
+require 'servicos/Carrinho.php';
 
 session_start();
 

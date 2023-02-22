@@ -1,7 +1,7 @@
 <?php
 
-require 'lista_produtos.php';
-require 'Carrinho.php';
+require 'servicos/Produto.servico.php';
+
 
 session_start();
 
@@ -10,7 +10,7 @@ if(!isset($_SESSION['produtos'])){
 }
 
 if(isset($_GET['id'])){
-    (new Carrinho)->adicionarProdutos($_GET['id'],$_POST['qtd']);
+    (new ProdutoServico)->adicionarProdutos($_GET['id'],$_POST['qtd']);
 }
 
 ?>
