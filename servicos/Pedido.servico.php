@@ -3,7 +3,7 @@
 require 'classes/Pedido.php';
 
 class PedidoServico{
-    public function formaPagamento($i){
+    public function formaPagamento(int $i):string{
         $forma = match(intval($i)){
             1 => 'Cartão de Crédito',
             2 => 'Boleto',

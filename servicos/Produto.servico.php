@@ -4,24 +4,22 @@ require 'classes/Produto.php';
 
 class ProdutoServico{
 
-    public function recuperarTodosProdutos($conexao){
-        $query = 'SELECT * FROM produtos';
-        $result = $conexao->query($query) or die($conexao->error);
-        $lista_produtos = [];
-        while($prod = $result->fetch_assoc()){
-            $lista_produtos[] = $prod;
-        }
-        return $lista_produtos;
+    public function recuperarTodosProdutos(PDO $conexao):array{
+        $buscar = 'SELECT * FROM produtos';
+        $stmt = $conexao->prepare($buscar);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
     
-    public function recuperarProduto($conexao,$id){
-        $query = "SELECT * FROM produtos where id = '$id'";
-        $result = $conexao->query($query) or die($conexao->error);
-        $produto = $result->fetch_assoc();
-        return $produto;
+    public function recuperarProduto(PDO $conexao,int $id):array{
+        $buscar = "SELECT * FROM produtos where id = :id";
+        $stmt = $conexao->prepare($buscar);
+        $stmt->bindValue(':id',$id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function adicionarProdutos($id,$qtd){
+    public function adicionarProdutos(int $id,int $qtd):void{
         foreach($_SESSION['produtos'] as $produtos){
             if($produtos['id'] == $id){
                 header('Location: index.php');

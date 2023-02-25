@@ -38,11 +38,11 @@ if(isset($_GET['id'])){
             <li class="col-12 gy-4 list-unstyled">
 
                 <div class="mb-2">
-                    <span><?php echo $produto['nome']?> - </span>
-                    <span> Valor: R$<?php echo $produto['preco']?></span>
+                    <span><?php echo $produto->nome?> - </span>
+                    <span> Valor: R$<?php echo $produto->preco?></span>
                 </div>
                
-                <form action="?id=<?php echo $produto['id']?>" method="POST" class="d-flex">
+                <form action="?id=<?php echo $produto->id?>" method="POST" class="d-flex">
                     <input name="qtd" type="number" min="1" max="10" value="1" class="form-control w-50">
                     <button type="submit" class="btn btn-dark text-white ms-2">Adicionar</button>
                 </form> 

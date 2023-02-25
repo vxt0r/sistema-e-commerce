@@ -39,7 +39,7 @@ session_destroy();
             <span class="col-10">Forma de pagamento: <?php echo $pedido->__get('forma_pagamento')?></span><br>
             <span class="col-10">Total: <?php echo $pedido->__get('total')?></span><br><br>
 
-            <a href="index.php" class="text-light">Voltar pra página principal</a><br>
+            <a href="index.php" class="col-10 text-light">Voltar pra página principal</a><br>
     </section>
     
 </body>
