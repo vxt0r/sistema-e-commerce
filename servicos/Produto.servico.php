@@ -22,11 +22,15 @@ class ProdutoServico{
     public function adicionarProdutos(int $id,int $qtd):void{
         foreach($_SESSION['produtos'] as $produtos){
             if($produtos['id'] == $id){
-                header('Location: index.php');
+                $i = array_search($produtos,$_SESSION['produtos']);
+                $_SESSION['produtos'][$i]['qtd'] += $qtd;
+                header('Location: index.php'); 
                 return;
             }
         }
         $_SESSION['produtos'][] = ['id'=>$id,'qtd'=>$qtd];
+        header('Location: index.php');
+        return;
     }
 }
 

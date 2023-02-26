@@ -30,7 +30,7 @@ if(isset($_GET['id'])){
     <header class="col-10 col-sm-8 gy-5 mx-auto text-secondary text-center">
         <h3>Escolha seus produtos e realize sua compra!</h3>
     </header>
-
+ 
     <main class="col-10 col-sm-8 col-md-6 gy-3 mx-auto bg-secondary rounded text-white">
 
         <ul class="row col-10">
@@ -44,7 +44,11 @@ if(isset($_GET['id'])){
                
                 <form action="?id=<?php echo $produto->id?>" method="POST" class="d-flex">
                     <input name="qtd" type="number" min="1" max="10" value="1" class="form-control w-50">
-                    <button type="submit" class="btn btn-dark text-white ms-2">Adicionar</button>
+                    <button type="submit"
+                            onclick="alert('Produto adicionado com sucesso!')" 
+                            class="btn btn-dark text-white ms-2">
+                            Adicionar
+                    </button>
                 </form> 
                    
             </li><br>
@@ -56,5 +60,6 @@ if(isset($_GET['id'])){
     <footer class="col-10 col-sm-8 gy-3 mx-auto text-center">
         <a href="carrinho.php">Ir para o carrinho</a>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

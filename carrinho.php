@@ -64,10 +64,13 @@ if(!empty($_SESSION['produtos'])){
         $carrinho->limparCarrinho();
 
     }
+    
     elseif(isset($_GET['finalizar'])){
-
-        foreach($produtos as $produto){
-            $_SESSION['pedido'][] = serialize($produto);
+        if($_GET['finalizar'] == 1){
+            foreach($produtos as $produto){
+                $_SESSION['pedido'][] = serialize($produto);
+            }
+            header('Location:?finalizar=2');
         }
     ?>
 
