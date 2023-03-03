@@ -26,8 +26,7 @@ if(isset($_GET['remover'])){
     }
 }
 
-include_once 'includes/carrinho-header.php';
-include_once 'includes/carrinho-main.php';
-include_once 'includes/carrinho-footer.php';
+include_once 'includes/carrinho-view.php';
+
 ?>
 

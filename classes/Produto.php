@@ -17,8 +17,9 @@ class Produto{
     }
 
     public function recuperarProdutosDb():array{
-        $query = (new Database('produtos'))->buscar();
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        $query = 'SELECT * FROM produtos';
+        $statement = (new Database('produtos'))->executarQuery($query);
+        return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function calcularTotal():float{
