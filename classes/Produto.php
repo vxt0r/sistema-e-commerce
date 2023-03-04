@@ -18,7 +18,7 @@ class Produto{
 
     public function recuperarProdutosDb():array{
         $query = 'SELECT * FROM produtos';
-        $statement = (new Database('produtos'))->executarQuery($query);
+        $statement = (new Database)->executarQuery($query);
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 

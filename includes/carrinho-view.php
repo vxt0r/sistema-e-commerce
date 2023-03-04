@@ -24,11 +24,11 @@
                 <span class="col-12 col-sm-6 col-md-4">Preço Unitário: R$<?php echo $produto->__get('preco')?></span>  
                 <span class="col-12 col-sm-6 col-md-4">Quantidade: <?php echo $produto->__get('qtd')?></span>
                 <span class="col-12 col-sm-6 col-md-12">Sub-total: <?php echo $produto->__get('preco') * $produto->__get('qtd')?></span>
-                <a href="?remover=1&id=<?php echo $produto->__get('id') ?>">Remover</a> 
+                <a class="text-dark" href="?remover=1&id=<?php echo $produto->__get('id') ?>">Remover</a> 
             </li>
             <?php } ?>
         </ul>
-         <a class="mx-auto" href="?finalizar=1">Avançar</a>
+         <a class="mx-auto text-white" href="?finalizar=1">Avançar</a>
             <?php } ?>
 
         <?php if(isset($_GET['finalizar'])){?>
@@ -36,12 +36,12 @@
             <form class="d-flex flex-column align-items-center mb-3" action="pedido.php" method="POST">
                 <input name="total" type="hidden" value="<?php echo (new Produto)->calcularTotal()?>">
                 <span>Total: <?php echo (new Produto)->calcularTotal()?></span>
-                <select class="mt-3 mb-2" name="pagamento" id="">
+                <select class="form-select w-50 mt-3 mb-2" name="pagamento" id="">
                     <option value="Cartão de Crédito">Cartão de Crédito</option>
                     <option value="Boleto">Boleto</option>
                     <option value="Pix">Pix</option>
                 </select>
-                <button type="submit">Confirmar</button>
+                <button class="btn btn-dark"type="submit">Confirmar</button>
             </form>
         <?php } ?>
     </main>

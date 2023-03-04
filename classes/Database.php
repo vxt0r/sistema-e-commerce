@@ -9,7 +9,7 @@ class Database{
 
     private PDO $conexao;
    
-    public function __construct(private string $tabela){
+    public function __construct(){
         $this->conexao = $this->conectar();
     }
 
