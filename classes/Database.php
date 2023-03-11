@@ -1,5 +1,12 @@
 <?php
 
+namespace classes;
+
+require_once 'vendor/autoload.php';
+
+use PDO;
+use PDOStatement;
+
 class Database{
 
     private string $host = 'localhost';

@@ -1,7 +1,9 @@
 <?php
 
-require 'classes/Produto.php';
-require 'classes/Pedido.php';
+require_once 'vendor/autoload.php';
+
+use classes\Produto;
+use classes\Pedido;
 
 session_start();
 

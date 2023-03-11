@@ -1,3 +1,10 @@
+<?php
+ 
+require_once 'vendor/autoload.php';
+
+use classes\Produto;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +22,7 @@
 
         <?php if(empty($_SESSION['carrinho'])){?>
             <p>Seu carrinho está vazio</p>
-        <?php } else{ ?>
+        <?php } else { ?>
 
         <ul class="container py-2">
             <?php foreach($_SESSION['carrinho'] as $produto){ ?>
@@ -29,13 +36,14 @@
             <?php } ?>
         </ul>
          <a class="mx-auto text-white" href="?finalizar=1">Avançar</a>
-            <?php } ?>
+        <?php } ?>
 
-        <?php if(isset($_GET['finalizar'])){?>
+        <?php if(isset($_GET['finalizar'])){ ?>
             <br><br>
             <form class="d-flex flex-column align-items-center mb-3" action="pedido.php" method="POST">
-                <input name="total" type="hidden" value="<?php echo (new Produto)->calcularTotal()?>">
-                <span>Total: <?php echo (new Produto)->calcularTotal()?></span>
+               <input type="hidden" name="total" value="<?php echo (new Produto)->calcularTotal()?>">
+               <span>Total: <?php echo (new Produto)->calcularTotal()?></span>
+               
                 <select class="form-select w-50 mt-3 mb-2" name="pagamento" id="">
                     <option value="Cartão de Crédito">Cartão de Crédito</option>
                     <option value="Boleto">Boleto</option>
@@ -54,6 +62,7 @@
     </div>
 </body>
 </html>
+
 
 
 

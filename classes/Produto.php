@@ -1,6 +1,11 @@
 <?php
 
-require 'classes/Database.php';
+namespace classes;
+
+require_once 'vendor/autoload.php';
+
+use classes\Database;
+use PDO;
 
 class Produto{
     private string $nome;

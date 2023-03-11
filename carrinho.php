@@ -1,6 +1,9 @@
 <?php
 
-require 'classes/Produto.php';
+require_once 'vendor/autoload.php';
+
+use classes\Produto;
+
 session_start();
 
 if(isset($_GET['adicionar'])){
@@ -29,4 +32,6 @@ if(isset($_GET['remover'])){
 include_once 'includes/carrinho-view.php';
 
 ?>
+
+
 

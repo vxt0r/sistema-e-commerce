@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 class Pedido{
     public function __construct(private array $produtos,
     private string $forma_pagamento,private float $total){}
